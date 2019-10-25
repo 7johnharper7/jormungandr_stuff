@@ -16,4 +16,4 @@ echo "We will skip tags..."
 echo "Now for the Jormungandr build, this will take a while..."
 cargo install --path jormungandr
 echo "Now the jcli build..."
-cargo install --path jormungandr
+cargo install --path jcli
