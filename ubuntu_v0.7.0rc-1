@@ -1,0 +1,19 @@
+echo ""
+echo "This is strictly for Ubuntu..."
+echo ""
+echo "Installing dependencies..."
+sudo apt-get install gcc build-essential pkg-config git curl libssl-dev
+echo "Installing Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup install stable
+rustup default stable
+echo "Cloning repository..."
+git clone --recurse-submodules https://github.com/input-output-hk/jormungandr
+echo "Entering repository..."
+cd jormungandr
+echo "We will skip tags..."
+echo "Now for the Jormungandr build, this will take a while..."
+cargo install --path jormungandr
+echo "Now the jcli build..."
+cargo install --path jormungandr
